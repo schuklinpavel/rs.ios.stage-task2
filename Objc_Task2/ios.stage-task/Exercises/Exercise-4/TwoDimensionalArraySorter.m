@@ -31,6 +31,9 @@
     
     NSArray *sortedStrings;
     sortedStrings = [strings sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+        if (numbers.count) {
+            return [b compare:a];
+        }
         return [a compare:b];
     }];
     
